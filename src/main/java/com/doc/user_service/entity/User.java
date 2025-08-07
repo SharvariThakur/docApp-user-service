@@ -3,18 +3,20 @@ package com.doc.user_service.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Entity
 @Data
 @AllArgsConstructor
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Or SEQUENCE, based on DB setup
     @Column(name = "user_id")
     private Long userId;
-
+    @Column(nullable = false, unique = true)
     private String username;
     private String password;
     private String fullName;

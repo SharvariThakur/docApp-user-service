@@ -2,7 +2,9 @@ package com.doc.user_service.dto;
 
 import com.doc.user_service.entity.User;
 
-public class UserDto {
+import java.io.Serializable;
+
+public class UserDto implements Serializable {
 
     private String username;
     private String password;

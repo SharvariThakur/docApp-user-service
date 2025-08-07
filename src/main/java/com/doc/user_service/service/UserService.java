@@ -28,7 +28,9 @@ public class UserService {
     }
 
     public Optional<User> login(String username, String password) {
-        return userRepo.findByUsername(username).filter(e-> e.getPassword().equals(password));
+        Optional<User> user = userRepo.findByUsername(username).filter(e-> e.getPassword().equals(password));
+        System.out.println("Found user: " + user);
+        return user;
     }
 
     public List<User> getAllUsers()
